@@ -1,11 +1,14 @@
 var channelName = 'TechGuyWeb';
+var vidWidth = 125;
+var vidHeight = 100;
+var vidResults = 20;
 
 $(document).ready(function() {
 	$.get(
 		"https://www.googleapis.com/youtube/v3/channels", 
 		{part: 'contentDetails',
 		forUsername: channelName,
-		key: 'AIzaSyC4rlwESm2_nfsf4J6hmLwO-PV-UcA34t4'},
+		key: 'AIzaSyDbUa-GHa-cE_uqvj86Z7RoH67fPsayP0o'},
 		function(data) {
 			$.each(data.items, function(i, item) {
 					console.log(item);
@@ -19,9 +22,9 @@ $(document).ready(function() {
 		$.get(
 			"https://www.googleapis.com/youtube/v3/playlistItems", 
 			{part: 'snippet',
-			maxResults: 10,
+			maxResults: vidResults,
 			playlistId : pid,
-			key: 'AIzaSyC4rlwESm2_nfsf4J6hmLwO-PV-UcA34t4'},
+			key: 'AIzaSyDbUa-GHa-cE_uqvj86Z7RoH67fPsayP0o'},
 			function(data) {
 				var output;
 				$.each(data.items, function(i, item) {
@@ -30,7 +33,7 @@ $(document).ready(function() {
 						videoId = item.snippet.resourceId.videoId;
 						
 						output='<li>'+videoTitle+'</li>';
-						output='<li><iframe src=\"//www.youtube.com/embed/'+videoId+'\"></iframe></li>';
+						output='<li><iframe height="'+vidHeight+'" width="'+vidWidth+'" src=\"//www.youtube.com/embed/'+videoId+'\"></iframe></li>';
 						
 						//Append to results listStyleType
 						$('#results').append(output);
