@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Youtube Channel Vids</title>
-		<style>
-			body{
-			background:#f4f4f4;
-			font-family:"Arial", sans-serif;
-			font-size:14px;
-			color:#666;
-			}
-			#container {
-				width: 800px;
-				margin:auto;
-				overflow:auto;
-				background:fff;
-				padding:15px;
-				}
-		</style>
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="js/script.js"></script>
+		<meta charset="utf-8">
+
+		<title>Youtube Specialized Feed</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<link rel="stylesheet" href="main.css">
+		<script type="text/javascript" src="js\jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js\script.js"></script>
+
 	</head>
 	<body>
-		<div id="container">
-			<h1>Youtube Videos</h1>
-			<ul id="results"></ul>
+		<div class="topnav-container">
+			<div class="topnav">
+				<a href="#home" class="active" class="nav-left">
+					<i class="fab fa-youtube"></i> Home</a>
+				<a href="#github" class="nav-right"><i class="fab fa-github"></i>  Github</a>
+				<a href="#about" class="nav-right">About</a>
+				<a href="#channellist" class="nav-right">Channel List</a>
+			</div>
 		</div>
+
+		<div class="header">
+			<h1><i class="fab fa-youtube"></i>  YOUTUBE Coding Feed</h1>
+			<h4>Only the best programming channels. Watch the most recent videos.</h4>
+		</div>
+		<div class="container">
+			<!-- Video thumbnails go here -->
+		</div>
+
 	</body>
-	
 </html>
