@@ -1,6 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
+    color: #111111;
 }
 
 .header {
@@ -60,6 +61,10 @@ article a {
     position: absolute;
     bottom: 8px;
     right: 4px;
+    background-color: rgba(0,0,0,0.5);
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 1rem;
 }
 
 .details a {
@@ -127,7 +132,6 @@ TOP NAV
 }
 
 .topnav a.nav-left {
-
     float: left;
 }
 
@@ -143,4 +147,45 @@ TOP NAV
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
+}
+
+/*ChannelList CSS*/
+#channellist li {
+    list-style-type: none;
+}
+
+/*about page css*/
+.about-icons {
+    display: flex;
+    padding: 10px;
+}
+
+.icons {
+    padding: 2%;
+    max-width: 18%;
+
+}
+
+.about-icons i {
+    color: #262626;
+    font-size: 3rem;
+    max-width: 18%;
+
+}
+
+.icons p {
+    text-align: center;
+
+}
+
+#description {
+    width: 60%;
+}
+
+#copyright {
+    width : 100%;
+    text-align: center;
+    display: inline-table;
+    font-size: .8rem;
+    color: grey;
 }

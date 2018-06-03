@@ -7,18 +7,18 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 		<link rel="stylesheet" href="main.css">
-		<script type="text/javascript" src="js\jquery-3.3.1.min.js"></script>
-		<script type="text/javascript" src="js\script.js"></script>
+		<!-- <script type="text/javascript" src="js\jquery-3.3.1.min.js"></script> -->
+		<!-- <script type="text/javascript" src="js\script.js"></script> -->
 
 	</head>
 	<body>
 		<div class="topnav-container">
 			<div class="topnav">
-				<a href="/" class="active" class="nav-left">
+				<a href="/" class="nav-left">
 					<i class="fab fa-youtube"></i> Home</a>
 				<a href="https://github.com/patricktouchette/youtube-specialized-feed" class="nav-right"><i class="fab fa-github"></i>  Github</a>
 				<a href="/about.html" class="nav-right">About</a>
-				<a href="channellist.html" class="nav-right">Channel List</a>
+				<a href="/channellist.html" class="nav-right active">Channel List</a>
 			</div>
 		</div>
 
@@ -26,11 +26,24 @@
 			<h1><i class="fab fa-youtube"></i>  YOUTUBE Coding Feed</h1>
 			<h4>Only the best programming channels. Watch the most recent videos.</h4>
 		</div>
-		<div class="container">
-			<!-- Video thumbnails go here -->
+		<div class="container" id="channellist">
+			<h1>Featured Channels</h1>
+			<h2>Rants</h2>
+				<li>Chris Hawkes</li>
+			<h2>Developer Advice</h2>
+				<li>Stefan Mischook</li>
+				<li>Dave Xiang</li>
+			<h2>Tutorials</h2>
+				<li>freeCodeVamp</li>
+				<li>Traversy Media</li>
+				<li>Derek Banas</li>
+				<li>Dev Tips</li>
+				<li>Fun Fun Function</li>
+				<li>Coding Train</li>
 		</div>
 
 		<p id="copyright">Copyright © 2018 Patrick Touchette. Built in Bromont, Qc, Canada</p>
+
 
 	</body>
 </html>

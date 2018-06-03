@@ -1,20 +1,18 @@
 $(document).ready(function() {
 	var key = "AIzaSyDbUa-GHa-cE_uqvj86Z7RoH67fPsayP0o"; //Upload this key to Github
-
 	var playlistId = "PLWKjhJtqVAbmDGFE_pZ-PDJ1GWe3KtT-M";
 	var URL = "https://www.googleapis.com/youtube/v3/playlistItems";
-
-	var channelList = [
-		"noobtoprofessional", //Chris Hawkes
-		"killerphp", //Stefan Mischook
-		"jsonmez", //jsonmez
-	]
 
 	var playLists = [
 		"UUfV36TX5AejfAGIbtwTc7Zw", //Chris Hawkes
 		"UUyUBW72KU30dfAYWLVNZO8Q", //Stefan Mischook
 		"UU8butISFwT-Wl7EV0hUK0BQ", //freeCodeVamp
-		"UU29ju8bIPH5as8OGnQzwJyA" //Traversy Media
+		"UU29ju8bIPH5as8OGnQzwJyA", //Traversy Media
+		"UUwRXb5dUK4cvsHbx-rGzSgw", //Derek Banas
+		"UUyIe-61Y8C4_o-zZCtO4ETQ", //Dev Tips
+		"UUO1cgjhGzsSYb1rsB4bFe4Q", //Fun Fun Function
+		"UUvjgXvBlbQiydffZU7m1_aw", //Coding Train
+		"UUu44AnfqsP-sRxmZHdnhblw", //Dave Xiang
 	]
 
 	var options = {
@@ -70,7 +68,7 @@ $(document).ready(function() {
 			var thumbnailUrl = item.snippet.thumbnails.medium.url
 			var channelTitle = item.snippet.channelTitle
 			var duration = videoData.items["0"].contentDetails.duration
-			var formattedTime = duration.replace("PT","").replace("H",":").replace("M",":").replace("S","")
+			var formattedTime = formatTime(duration);
 			var viewCount = videoData.items["0"].statistics.viewCount
 			var videoUrl = "https://www.youtube.com/watch?v=" + id
 			var channelUrl = "https://www.youtube.com/channel/" + item.snippet.channelId
@@ -87,7 +85,7 @@ $(document).ready(function() {
 							<p class="title">${title}</p></a>
 						<a href="${channelUrl}" target="_blank">
 							<p class="channel">${channelTitle}</p></a>
-						<p class="date">${viewCount} views '•' ${date}</p>
+						<p class="date">${viewCount} views • ${date}</p>
 					</div>
 				</article>`
 			)
@@ -95,7 +93,14 @@ $(document).ready(function() {
 	}
 
 	function formatTime(timeString){
-		var formattedTime = duration.replace("PT","").replace("H",":").replace("M",":").replace("S","")
+		var timeArray = timeString.replace(/[PTS]/g,"").split(/[\D]/g)
+		timeArray.forEach(function(t, index){
+			if (t.length < 2){
+				timeArray[index] = "0" + t
+			}
+		})
+		return timeArray.join(":")
 
 	}
+
 }) //document.ready
